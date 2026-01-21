@@ -15,9 +15,11 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-[#3B82F6] clip-path-polygon flex items-center justify-center font-bold text-white font-mono">
-              IK
+              IM
             </div>
-            <span className="font-bold text-xl tracking-tighter text-white">IKRA<span className="text-[#EF4444]">SIM</span></span>
+            <span className="font-bold text-xl tracking-tighter text-white">
+              <span className="text-[#3B82F6]">Ikra</span>matic
+            </span>
           </div>
           
           <div className="hidden md:flex items-center gap-8 font-mono text-sm">
@@ -43,7 +45,7 @@ const App: React.FC = () => {
       {/* Footer */}
       <footer className="bg-black border-t border-gray-900 py-12 text-center">
         <p className="font-mono text-gray-600 text-xs">
-          © 2025 IKRASIM TACTICAL SYSTEMS. ALL RIGHTS RESERVED.<br/>
+          © 2025 IKRAMATIC TACTICAL SYSTEMS. ALL RIGHTS RESERVED.<br/>
           RESTRICTED ACCESS. UNAUTHORIZED USE IS PROHIBITED.
         </p>
       </footer>
