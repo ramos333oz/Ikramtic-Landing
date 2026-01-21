@@ -132,7 +132,7 @@ export const Features: React.FC = () => {
       description: "Experience 9G forces in a 6-DOF motion platform. 1:1 cockpit replication for F-35, F-22, and Eurofighter Typhoon models with next-gen photogrammetry.",
       specs: ["6-DOF Motion Platform", "Photorealistic Photogrammetry", "Multi-Role Configurable"],
       imageSrc: "https://images.unsplash.com/photo-1559819614-81dd9add6128?q=80&w=1920&auto=format&fit=crop", 
-      videoSrc: "/videos/jet.mp4",
+      videoSrc: `${import.meta.env.BASE_URL}videos/jet.mp4`,
       align: "left",
       color: "blue"
     },
@@ -143,7 +143,7 @@ export const Features: React.FC = () => {
       description: "Master remote piloting for UAV/UAS assets. Includes realistic signal latency, jamming simulation, and thermal optics for surgical precision.",
       specs: ["Signal Latency Emulation", "Electronic Warfare Suite", "Swarm Logic AI"],
       imageSrc: "https://images.unsplash.com/photo-1506947411487-a5673826e6e6?q=80&w=1920&auto=format&fit=crop", 
-      videoSrc: "/videos/drone-3.mp4",
+      videoSrc: `${import.meta.env.BASE_URL}videos/drone-3.mp4`,
       align: "right",
       color: "blue"
     },
@@ -154,7 +154,7 @@ export const Features: React.FC = () => {
       description: "Precision infantry training. Recoil-simulated platforms connected to a dynamic ballistics engine that accounts for wind, humidity, and Coriolis effect.",
       specs: ["Haptic Recoil Feedback", "Environmental Physics", "Squad Link Integration"],
       imageSrc: "https://images.unsplash.com/photo-1595590424283-b8f17842773f?q=80&w=1920&auto=format&fit=crop", 
-      videoSrc: "/videos/minigun.mp4",
+      videoSrc: `${import.meta.env.BASE_URL}videos/minigun.mp4`,
       align: "left",
       color: "red"
     }

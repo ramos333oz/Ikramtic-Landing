@@ -83,7 +83,7 @@ export const Hero: React.FC<HeroProps> = ({ onBriefingRequest }) => {
           playsInline
           className="w-full h-full object-cover opacity-80 mix-blend-screen"
         >
-          <source src="/videos/drone-1.mp4" type="video/mp4" />
+          <source src={`${import.meta.env.BASE_URL}videos/drone-1.mp4`} type="video/mp4" />
         </video>
         {/* Seamless Fade Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black"></div>
