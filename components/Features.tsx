@@ -7,13 +7,14 @@ interface FeatureSectionProps {
   description: string;
   specs: string[];
   imageSrc: string;
+  videoSrc?: string;
   align: 'left' | 'right';
   index: string;
   color: 'blue' | 'red';
 }
 
 const FeatureSection: React.FC<FeatureSectionProps> = ({ 
-  id, title, subtitle, description, specs, imageSrc, align, index, color
+  id, title, subtitle, description, specs, imageSrc, videoSrc, align, index, color
 }) => {
   // Color classes map
   const colors = {
@@ -36,17 +37,29 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
   const theme = colors[color];
 
   return (
-    <section id={id} className="relative h-screen w-full overflow-hidden flex items-center snap-start bg-black border-b border-gray-900/50">
+    <section id={id} className="relative h-screen w-full overflow-hidden flex items-center snap-start bg-black">
       {/* Background Media Placeholder */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={imageSrc} 
-          alt={title} 
-          className="w-full h-full object-cover opacity-40 grayscale contrast-125 hover:scale-105 transition-transform duration-[20s]"
-        />
-        {/* Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/20"></div>
-        <div className={`absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]`}></div>
+        {videoSrc ? (
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="w-full h-full object-cover opacity-70 hover:scale-105 transition-transform duration-[20s]"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        ) : (
+          <img 
+            src={imageSrc} 
+            alt={title} 
+            className="w-full h-full object-cover opacity-70 hover:scale-105 transition-transform duration-[20s]"
+          />
+        )}
+        {/* Seamless Gradients */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-90"></div>
+        <div className={`absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]`}></div>
         
         {/* Tech Grid Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(20,20,20,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(20,20,20,0.3)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
@@ -119,6 +132,7 @@ export const Features: React.FC = () => {
       description: "Experience 9G forces in a 6-DOF motion platform. 1:1 cockpit replication for F-35, F-22, and Eurofighter Typhoon models with next-gen photogrammetry.",
       specs: ["6-DOF Motion Platform", "Photorealistic Photogrammetry", "Multi-Role Configurable"],
       imageSrc: "https://images.unsplash.com/photo-1559819614-81dd9add6128?q=80&w=1920&auto=format&fit=crop", 
+      videoSrc: "/videos/jet.mp4",
       align: "left",
       color: "blue"
     },
@@ -129,6 +143,7 @@ export const Features: React.FC = () => {
       description: "Master remote piloting for UAV/UAS assets. Includes realistic signal latency, jamming simulation, and thermal optics for surgical precision.",
       specs: ["Signal Latency Emulation", "Electronic Warfare Suite", "Swarm Logic AI"],
       imageSrc: "https://images.unsplash.com/photo-1506947411487-a5673826e6e6?q=80&w=1920&auto=format&fit=crop", 
+      videoSrc: "/videos/drone-3.mp4",
       align: "right",
       color: "blue"
     },
@@ -139,6 +154,7 @@ export const Features: React.FC = () => {
       description: "Precision infantry training. Recoil-simulated platforms connected to a dynamic ballistics engine that accounts for wind, humidity, and Coriolis effect.",
       specs: ["Haptic Recoil Feedback", "Environmental Physics", "Squad Link Integration"],
       imageSrc: "https://images.unsplash.com/photo-1595590424283-b8f17842773f?q=80&w=1920&auto=format&fit=crop", 
+      videoSrc: "/videos/minigun.mp4",
       align: "left",
       color: "red"
     }

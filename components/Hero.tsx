@@ -76,13 +76,18 @@ export const Hero: React.FC<HeroProps> = ({ onBriefingRequest }) => {
     <section className="relative h-screen w-full overflow-hidden flex items-end">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://picsum.photos/1920/1080?grayscale&blur=2" 
-          alt="Cockpit View" 
-          className="w-full h-full object-cover opacity-40 grayscale contrast-125"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_20%,#000000_100%)]"></div>
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="w-full h-full object-cover opacity-80 mix-blend-screen"
+        >
+          <source src="/videos/drone-1.mp4" type="video/mp4" />
+        </video>
+        {/* Seamless Fade Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black"></div>
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
       </div>
 
       {/* Interactive Drone Overlay */}

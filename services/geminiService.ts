@@ -2,7 +2,9 @@ import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
 
 // Initialize Gemini Client
 // NOTE: We are assuming process.env.API_KEY is available as per instructions.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+// If not, we provide a placeholder to prevent the app from crashing on boot.
+const apiKey = process.env.API_KEY || 'MISSING_API_KEY';
+const ai = new GoogleGenAI({ apiKey });
 
 const SYSTEM_INSTRUCTION = `
 You are the Tactical Operations AI (TacOps-AI) for IkraSim, a leading military simulation company.
