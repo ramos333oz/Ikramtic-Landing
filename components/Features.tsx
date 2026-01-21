@@ -46,7 +46,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
             muted 
             loop 
             playsInline
-            className="w-full h-full object-cover opacity-70 hover:scale-105 transition-transform duration-[20s]"
+            className="w-full h-full object-cover opacity-80 mix-blend-screen hover:scale-105 transition-transform duration-[20s]"
           >
             <source src={videoSrc} type="video/mp4" />
           </video>
