@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Features } from './components/Features';
 import { TechSpecs } from './components/TechSpecs';
@@ -11,29 +12,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-gray-200 selection:bg-[#3B82F6] selection:text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-[#3B82F6] clip-path-polygon flex items-center justify-center font-bold text-white font-mono">
-              IM
-            </div>
-            <span className="font-bold text-xl tracking-tighter text-white">
-              <span className="text-[#3B82F6]">Ikra</span>matic
-            </span>
-          </div>
-          
-          <div className="hidden md:flex items-center gap-8 font-mono text-sm">
-            <a href="#" className="hover:text-[#3B82F6] transition-colors">THE FLEET</a>
-            <a href="#" className="hover:text-[#3B82F6] transition-colors">SPECS</a>
-            <button 
-              onClick={() => setIsBriefingOpen(true)}
-              className="text-[#3B82F6] border border-[#3B82F6]/50 px-4 py-1 hover:bg-[#3B82F6] hover:text-white transition-all"
-            >
-              AI BRIEFING
-            </button>
-          </div>
-        </div>
-      </nav>
+      <Navbar onBriefingRequest={() => setIsBriefingOpen(true)} />
 
       <main>
         <Hero onBriefingRequest={() => setIsBriefingOpen(true)} />
